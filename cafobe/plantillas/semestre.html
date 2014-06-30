@@ -1,0 +1,11 @@
+
+
+{% block content %}
+<div id='cuestionario'>
+    <ul>
+    {% for elemento in conteos %}
+        <li><a href='{{elemento.semestre.pk}}'>{{elemento.semestre.nombre}}</a> ({{elemento.numero}})</li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

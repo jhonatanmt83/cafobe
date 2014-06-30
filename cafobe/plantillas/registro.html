@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load bootstrap_toolkit %}
+{% block active2 %}active{% endblock %}
+{% block section1 %}
+<form class='form-horizontal' method='post' action=''>{% csrf_token %}
+	<h2>Nuevo Registro</h2> 
+	{{formr|as_bootstrap}}
+		<input class='span8 pull-right btn btn-large btn-primary' type='submit' value='Ingresar'>
+</form>
+{% endblock %}

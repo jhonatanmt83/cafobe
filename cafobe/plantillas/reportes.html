@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block section1 %}
+
+{% if var1 %}
+    {{ var1|safe }}
+{% else %}{% if var2 %}
+    {{ var2|safe }}
+{% else %}{% if var3 %}
+    {{ var3|safe }}
+{% endif %}{% endif %}{% endif %}
+    <!--Navegacion -->
+    {% if motivo %}
+        <h2><a href='/{{url_mot}}/'>{{ titulo }}</a>
+        {% if titulo_facultad %}
+         > <a href='/reportes/motivo/{{ motivo.pk }}/{{ facultad.pk }}'>{{ titulo_facultad }}</a>
+        {% endif %}
+        </h2>
+    {% elif estado %}
+        <h2><a href='/{{url_est}}/'>{{ titulo }}</a>
+        {% if titulo_facultad %}
+         > <a href='/reportes/estado/{{ estado }}/{{ facultad.pk }}'>{{ titulo_facultad }}</a>
+        {% endif %}
+        </h2>
+    {% else %}
+        <h2><a href='/facultades/'>Facultades</a> >
+        <a href='/{{url_ant}}/{{ facultad.pk  }}'>{{ titulo_facultad }}</a></h2>
+    {% endif %}
+   <!-- Contenido estudiantes-->
+    {% if estudiantes %}
+	<ul class="unstyled">
+	{% for estudiante in estudiantes %}
+    {% if motivo %}
+	<li><a href='/reportes/motivo/{{ motivo.pk }}/{{ facultad.pk }}/{{estudiante.pk}}'>{{estudiante.nombres}} {{estudiante.apellidos}}</a></li>
+    {% elif estado %}
+    <li><a href='/reportes/estado/{{estado}}/{{ facultad.pk }}/{{estudiante.pk}}'>{{estudiante.nombres}} {{estudiante.apellidos}}</a></li>
+    {% else %}
+    <li><a href='/reportes/{{ facultad.pk }}/{{estudiante.pk}}'>{{estudiante.nombres}} {{estudiante.apellidos}}</a></li>
+    {% endif %}
+	{% endfor %}
+    </ul>
+    {% endif %}
+    <!-- Registros del estudiante -->
+    {% if estudiante %}
+        Reporte de {{ estudiante.codigo }}<br/>
+        {{estudiante.nombres}} {{estudiante.apellidos}}
+        {% if registros %}
+            <ul>
+            {% for registro in registros %}
+                <ul>
+                {{ registro.expediente }}
+                </ul>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No se encontraron registros</p>
+        {% endif %}
+    {% endif %}
+   	
+{% endblock %}
+
+{% block js %}
+<script>
+    $(document).ready(function() {
+        $('#menu_{{activo}}').addClass("active");
+    });
+
+</script>
+{% endblock %}

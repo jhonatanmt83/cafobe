@@ -1,0 +1,41 @@
+from django.db import models
+import datetime
+from django import forms
+from django.forms import ModelForm,Select,TextInput
+
+# Create your models here.
+class formingreso(forms.Form):
+    usuarioform = forms.CharField(label='Usuario')
+    passform = forms.CharField(label='Clave',widget=forms.PasswordInput(render_value=False))
+
+class Rubro(models.Model):
+    nombre = models.CharField(max_length=18, verbose_name='rubro')
+    
+    def __unicode__(self):
+	return self.nombre
+
+class RubroForm(ModelForm):
+    class Meta:
+	model = Rubro
+
+class Registro(models.Model):
+    codigo = models.CharField(max_length=11, verbose_name = 'Codigo de Matricula')
+    apellidos = models.CharField(max_length=50, verbose_name = 'Apellidos')
+    nombres = models. CharField(max_length=50, verbose_name = 'Nombres')
+    #facultad = models.ForeignKey(Facultad)
+    facultad = models.CharField(max_length=50, verbose_name = 'Facultad')
+    #semestre = models.ForeignKey(Semestre)
+    semestre = models.CharField(max_length=1, verbose_name = 'Semestre')
+    fecha = models.DateField(auto_now_add=False)
+    expediente = models.CharField(max_length=10, verbose_name = 'Expediente')
+    motivo = models.ForeignKey(Rubro)
+    suma = models.DecimalField(max_digits=4, decimal_places=2, verbose_name = 'Suma S/.')
+    acuerdo = models.TextField(verbose_name='Acuerdo')
+
+    def __unicode__(self):
+	return self.codigo
+
+class RegistroForm(ModelForm):
+    class Meta:
+	model = Registro
+

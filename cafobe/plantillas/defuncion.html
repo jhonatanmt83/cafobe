@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block active9 %}active{% endblock %}
+{% block section1 %}
+	<h2>Defuncion de Padres</h2>
+	<ul class="unstyled">
+	{% for elemento in conteos %}
+	<li><a href='/reportes/motivo/4/{{elemento.facultad.pk}}'>{{elemento.facultad.nombre}}</a> ({{elemento.numero}})</li>
+	{% endfor %}
+    </ul>
+   	aqui van todos lso alumnos que estan con beca
+{% endblock %}

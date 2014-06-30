@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block active5 %}active{% endblock %}
+{% block section1 %}
+	<h2>Facultades</h2>
+    <ul class='unstyled'>
+    {% for elemento in conteos %}
+        <li><a href='/reportes/{{elemento.facultad.pk}}'>{{elemento.facultad.nombre}}</a> ({{elemento.numero}})</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

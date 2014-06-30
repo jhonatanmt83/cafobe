@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block active12 %}active{% endblock %}
+{% block section1 %}
+	<h2>Alumnos pendientes a recoger</h2>
+	<ul class="unstyled">
+		{% for elemento in conteos %}
+        	<li><a href='/reportes/estado/recoger/{{elemento.facultad.pk}}'>{{elemento.facultad.nombre}}</a> ({{elemento.numero}})</li>
+    	{% endfor %}
+    </ul>
+   	
+{% endblock %}

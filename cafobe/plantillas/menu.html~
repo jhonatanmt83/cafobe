@@ -1,0 +1,14 @@
+{% block title %}CAFOBE{% endblock %}
+{% block content %}
+<h2><a href='#'>NUEVO REGISTRO</a></h2>
+<div class='reporte'>
+<ul>
+    REPORTES:	
+    <li><a href='#'>Facultad</a></li>
+    <li><a href='#'>Semestre</a></li>
+    <li><a href='#'>Faltan Cobrar</a></li>
+    <li><a href='#'>Becas de Estimulo/Facultad</a></li>
+    <li><a href='#'>No Deudores</a></li>
+</ul>
+</div>
+{% endblock %}

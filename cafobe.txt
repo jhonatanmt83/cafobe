@@ -1,0 +1,26 @@
+Beneficiarios de CAFOBE
+El Programa  constará de una base de  datos que contiene:
+
+-Beneficiarios, registro de estudiantes por facultades que solicitan apoyo así como rubros:
+Salud.
+Alto rendimiento académico.
+Beca de estímulo. 
+Maternidad.
+Defunción de padres.
+-Deudores, registro de estudiantes por:
+Años
+Facultades
+Atenciones
+Montos.
+-Justificaciones (informe de rendiciones), registro de estudiantes que rindieron sus apoyos por facultades y fechas de rendición cuentas. 
+-Reporte de apoyo solicitado según Reglamento una vez por semestre.
+-Registrar los acuerdos por cada alumno.
+-Formular balance y rendición de cuentas anuales: cuanto dinero por año se ha invertido en los apoyos, devoluciones y deudores.
+-Ingresar el monto anual y registrar actividades.
+-Reportar quienes no cobraron de tesorería (sistema enlazado con Tesorería).
+-Verificar el alto rendimiento con el código de matricula.
+-Las becas de estimulo debe reportarse solo 6 estudiantes por facultad
+-Estudiantes con enfermedades crónicas serán clasificados para un apoyo sostenible.
+-Reportar al no adeudado del a estudiante para expedición de constancia de no deudo.
+-El apoyo por oftalmología será por única vez por el lapso de los 5 años de estudios.
+-Reporte de la cantidad de deudores para expedición de constancias de no deudas.

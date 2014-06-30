@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block active8 %}active{% endblock %}
+{% block section1 %}
+	<h2>Maternidad</h2>
+	<ul class="unstyled">
+	{% for elemento in conteos %}
+	<li><a href='/reportes/motivo/3/{{elemento.facultad.pk}}'>{{elemento.facultad.nombre}}</a> ({{elemento.numero}})</li>
+	{% endfor %}
+    </ul>
+   	aqui van todos lso alumnos que estan con beca
+{% endblock %}

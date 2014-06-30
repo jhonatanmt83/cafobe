@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load bootstrap_toolkit %}
+{% block active3 %}active{% endblock %}
+{% block section1 %}
+	<h2>Rendicion de cuentas</h2>
+		<form class='form-horizontal' id='formulario' method='post' action=''>{% csrf_token %}
+			{{formulario|as_bootstrap}}
+		<p><input class='span8 pull-right btn btn-primary btn-large' type='submit' value='Agregar'/></p>
+		</form>
+{% endblock %}
